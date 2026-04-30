@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Robot Arm Case Study | Jackson Nguyen</title>
+    <title>Case Study: 6-Axis Robot Arm | Jackson Nguyen</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600;700&family=Azeret+Mono&display=swap" rel="stylesheet">
@@ -12,88 +12,145 @@
         .mono { font-family: 'Azeret Mono', monospace; }
         .accent-color { color: #DEFF9A; }
         .card-bg { background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .in-progress-badge { background-color: #f59e0b; color: #000; font-weight: 800; padding: 4px 12px; border-radius: 4px; display: inline-block; margin-bottom: 1rem; }
     </style>
 </head>
-<body>
-
-    <nav class="p-6">
-        <a href="index.html" class="mono accent-color hover:underline text-sm"><i class="fa-solid fa-arrow-left mr-2"></i> Back to Portfolio</a>
+<body class="py-12">
+    <nav class="max-w-5xl mx-auto px-6 mb-8">
+        <a href="../index.html" class="mono accent-color hover:underline text-sm uppercase tracking-widest">
+            <i class="fa-solid fa-arrow-left mr-2"></i> Back to Hub
+        </a>
     </nav>
 
-    <main class="max-w-4xl mx-auto px-6 py-12">
-        <h1 class="text-5xl font-bold mb-4">6-Axis Industrial Manipulator</h1>
-        <p class="mono accent-color mb-12">System Integration & Power Electronics</p>
-
-        <div class="w-full h-96 bg-slate-800 mb-16 overflow-hidden rounded-lg">
-            <img src="YOUR_ROBOT_IMAGE.jpg" class="w-full h-full object-cover" alt="Full Robot Arm">
+    <main class="max-w-5xl mx-auto px-6">
+        <div class="text-center md:text-left">
+            <span class="in-progress-badge mono text-xs uppercase tracking-tighter italic">Status: IN PROGRESS</span>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-12">
-            <div class="md:col-span-1 space-y-8">
-                <div>
-                    <h4 class="mono text-xs uppercase tracking-widest text-slate-500 mb-2">Role</h4>
-                    <p>Lead Engineer</p>
-                </div>
-                <div>
-                    <h4 class="mono text-xs uppercase tracking-widest text-slate-500 mb-2">Hardware</h4>
-                    <ul class="text-sm space-y-1">
-                        <li>Arduino Mega 2560</li>
-                        <li>6x NEMA Stepper Motors</li>
-                        <li>25kg High-Torque Servo</li>
-                        <li>A4988 Drivers</li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="mono text-xs uppercase tracking-widest text-slate-500 mb-2">Power</h4>
-                    <p class="text-sm">24V / 15A Switching PSU</p>
-                </div>
-            </div>
+        <div class="mb-16">
+            <h1 class="text-5xl md:text-7xl font-bold mb-4 uppercase">6-Axis Robot Arm</h1>
+            <p class="mono text-slate-500 uppercase tracking-widest tracking-[0.2em]">Systems Integration & Power Electronics</p>
+        </div>
 
-            <div class="md:col-span-2 space-y-12">
-                <section>
-                    <h3 class="text-2xl font-bold mb-4 border-b border-slate-700 pb-2">Technical Challenge</h3>
-                    <p class="text-slate-400">
-                        The primary challenge was managing the high inductive noise and current draw of a 6-axis system. The 25kg servo used for the end-effector generated significant back-EMF, which threatened the stability of the Arduino logic rail.
-                    </p>
-                </section>
-
-                <section class="card-bg p-8 rounded-lg border-l-4 border-accent">
-                    <h3 class="text-xl font-bold mb-4 italic text-white text-white italic">Engineering Spotlight: Power Stability</h3>
-                    <p class="text-slate-300 mb-4">
-                        To resolve voltage sag during simultaneous multi-axis movement, I integrated a <strong>16V 1000 µF reservoir capacitor</strong>. This successfully buffered the servo's peak current demands, maintaining a clean signal floor for the MCU.
-                    </p>
-                </section>
-
-                <section>
-                    <h3 class="text-2xl font-bold mb-4 border-b border-slate-700 pb-2">Thermal Management</h3>
-                    <p class="text-slate-400 mb-6">
-                        Operating the NEMA motors at 24V pushed the A4988 drivers to their thermal limits. I implemented a forced-air cooling solution consisting of:
-                    </p>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="bg-slate-800 p-4 rounded text-center">
-                            <i class="fa-solid fa-snowflake accent-color mb-2"></i>
-                            <p class="text-xs mono">Aluminum Heatsinks</p>
-                        </div>
-                        <div class="bg-slate-800 p-4 rounded text-center">
-                            <i class="fa-solid fa-fan accent-color mb-2"></i>
-                            <p class="text-xs mono">Dual 40mm Fans</p>
-                        </div>
+        <section class="mb-20">
+            <h3 class="text-2xl font-bold mb-8 italic border-b border-slate-700 pb-2">System Schematics</h3>
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div>
+                    <p class="mono text-xs text-slate-500 uppercase mb-2">01. Raw Schematics (As Instructed)</p>
+                    <div class="w-full h-64 bg-slate-800 rounded border border-dashed border-slate-600 flex items-center justify-center">
+                        <span class="text-slate-500 italic">[Upload Raw Schematic Image Here]</span>
                     </div>
-                </section>
-
-                <section>
-                    <h3 class="text-2xl font-bold mb-4 border-b border-slate-700 pb-2">Control Logic</h3>
-                    <p class="text-slate-400">
-                        The firmware was developed to decode IR signals in real-time. Using the Mega's hardware timers, I synchronized step-pulse generation across 6 axes, ensuring smooth motion profiles and manual override capabilities via remote.
-                    </p>
-                </section>
+                </div>
+                <div>
+                    <p class="mono text-xs text-slate-500 uppercase mb-2">02. Cooked Schematics (Custom Improvements)</p>
+                    <div class="w-full h-64 bg-slate-800 rounded border border-dashed border-slate-600 flex items-center justify-center">
+                        <span class="text-slate-500 italic">[Upload Custom Schematic Image Here]</span>
+                    </div>
+                </div>
             </div>
-        </div>
+            <div>
+                <p class="mono text-xs text-slate-500 uppercase mb-2">Physical Implementation: Wiring System</p>
+                <div class="w-full h-80 bg-slate-800 rounded border border-dashed border-slate-600 flex items-center justify-center">
+                    <span class="text-slate-500 italic">[Upload Real-Life Wiring Image Here]</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-20">
+            <h3 class="text-2xl font-bold mb-8 italic border-b border-slate-700 pb-2">Key Hardware Components</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="space-y-2">
+                    <div class="aspect-square bg-slate-800 rounded border border-white/5 flex items-center justify-center p-4 text-center">
+                        <span class="text-[10px] text-slate-500">[25kg Servo Motor]</span>
+                    </div>
+                    <p class="text-[10px] mono text-center uppercase">25kg Servo</p>
+                </div>
+                <div class="space-y-2">
+                    <div class="aspect-square bg-slate-800 rounded border border-white/5 flex items-center justify-center p-4 text-center">
+                        <span class="text-[10px] text-slate-500">[NEMA Stepper Motor]</span>
+                    </div>
+                    <p class="text-[10px] mono text-center uppercase">NEMA Stepper</p>
+                </div>
+                <div class="space-y-2">
+                    <div class="aspect-square bg-slate-800 rounded border border-white/5 flex items-center justify-center p-4 text-center">
+                        <span class="text-[10px] text-slate-500">[Brushless Fan]</span>
+                    </div>
+                    <p class="text-[10px] mono text-center uppercase">Cooling System</p>
+                </div>
+                <div class="space-y-2">
+                    <div class="aspect-square bg-slate-800 rounded border border-white/5 flex items-center justify-center p-4 text-center">
+                        <span class="text-[10px] text-slate-500">[A4988 Driver & Module]</span>
+                    </div>
+                    <p class="text-[10px] mono text-center uppercase">CNC Driver</p>
+                </div>
+                <div class="space-y-2">
+                    <div class="aspect-square bg-slate-800 rounded border border-white/5 flex items-center justify-center p-4 text-center">
+                        <span class="text-[10px] text-slate-500">[Arduino Mega]</span>
+                    </div>
+                    <p class="text-[10px] mono text-center uppercase">Microcontroller</p>
+                </div>
+                <div class="space-y-2">
+                    <div class="aspect-square bg-slate-800 rounded border border-white/5 flex items-center justify-center p-4 text-center">
+                        <span class="text-[10px] text-slate-500">[XL4016 Buck Converter]</span>
+                    </div>
+                    <p class="text-[10px] mono text-center uppercase">Step Down (24V -> 8V)</p>
+                </div>
+                <div class="space-y-2">
+                    <div class="aspect-square bg-slate-800 rounded border border-white/5 flex items-center justify-center p-4 text-center">
+                        <span class="text-[10px] text-slate-500">[Hall Sensor]</span>
+                    </div>
+                    <p class="text-[10px] mono text-center uppercase">Motion Control</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-20">
+            <h3 class="text-2xl font-bold mb-8 italic border-b border-slate-700 pb-2">Technical Challenge & Debugging Roadmap</h3>
+            <div class="space-y-6">
+                <div class="card-bg p-6 rounded border-l-4 border-amber-500">
+                    <h4 class="font-bold mb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-triangle-exclamation text-amber-500"></i>
+                        Servo Current Inrush
+                    </h4>
+                    <p class="text-sm text-slate-400 mb-2">The 25kg servo motor draws significant current during peak torque, causing logic rail instability.</p>
+                    <p class="text-xs mono accent-color italic uppercase">Proposed Idea: Use a 1000uF / 16V capacitor for decoupling to buffer the power rail.</p>
+                </div>
+
+                <div class="card-bg p-6 rounded border-l-4 border-amber-500">
+                    <h4 class="font-bold mb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-triangle-exclamation text-amber-500"></i>
+                        Buck Converter Polar Sensitivity
+                    </h4>
+                    <p class="text-sm text-slate-400 mb-2">The XL4016 input is polarized; accidental reverse polarity will cause catastrophic component failure.</p>
+                    <p class="text-xs mono accent-color italic uppercase">Proposed Idea: Integrate a protection diode at the input stage to prevent blow-ups.</p>
+                </div>
+
+                <div class="card-bg p-6 rounded border-l-4 border-amber-500">
+                    <h4 class="font-bold mb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-triangle-exclamation text-amber-500"></i>
+                        Over-Current Safety (15A+)
+                    </h4>
+                    <p class="text-sm text-slate-400 mb-2">System current may exceed 15A during multi-axis movement, risking heat damage or fire.</p>
+                    <p class="text-xs mono accent-color italic uppercase">Proposed Idea: Add an inline fuse to the primary power rail to protect the entire system.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-20 py-12 border-t border-white/10">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6 card-bg p-8 rounded-sm">
+                <div>
+                    <h3 class="text-2xl font-bold accent-color mb-2">Technical Source Code</h3>
+                    <p class="text-slate-400 text-sm">Review the firmware and system logic on GitHub.</p>
+                </div>
+                <a href="https://github.com/JacksonAkt/3D-Robot-Arm-" target="_blank" class="px-8 py-4 bg-white text-slate-900 font-bold flex items-center gap-3 hover:bg-accent transition duration-300 uppercase tracking-widest text-sm">
+                    <i class="fa-brands fa-github text-xl"></i> View Repository
+                </a>
+            </div>
+        </section>
     </main>
 
-    <footer class="py-20 text-center">
-        <a href="index.html" class="px-8 py-3 border border-slate-700 hover:border-accent transition">Return to Home</a>
+    <footer class="mt-20 py-10 text-center border-t border-white/5">
+        <a href="../index.html" class="mono text-[10px] text-slate-500 uppercase tracking-widest hover:accent-color transition">Return to Hub</a>
     </footer>
-
 </body>
 </html>
