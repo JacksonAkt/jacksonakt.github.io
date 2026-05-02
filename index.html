@@ -8,7 +8,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600;700&family=Azeret+Mono&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Urbanist', sans-serif; background-color: #0f172a; color: #e2e8f0; }
+        body { font-family: 'Urbanist', sans-serif; background-color: #0f172a; color: #e2e8f0; scroll-behavior: smooth; }
         .mono { font-family: 'Azeret Mono', monospace; }
         .accent-color { color: #DEFF9A; }
         .bg-accent { background-color: #DEFF9A; }
@@ -32,94 +32,173 @@
     </nav>
 
     <header class="pt-40 pb-20 px-6 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
-        <div class="md:w-2/3">
+        <div class="md:w-2/3 text-center md:text-left">
             <p class="mono accent-color mb-4 tracking-widest uppercase">Electrical Engineer | UCI</p>
             <h1 class="text-6xl md:text-8xl font-bold mb-6">DOAN <span class="gradient-text">(JACKSON)</span> NGUYEN</h1>
             <p class="text-xl text-slate-400 mb-8 max-w-xl">
-                Specializing in **embedded systems**, **high-power distribution**, and **industrial robotics**. 
-                Focusing on building robust hardware that bridges the gap between digital logic and mechanical motion.
+                I am currently a junior at the University of California, Irvine, pursuing a Bachelor’s degree in Electrical Engineering with a strong interest in pursuing a career in electrical and embedded systems after graduation.
+I previously earned an Associate of Science degree with an emphasis in Engineering from Santa Ana College, where I built a strong foundation in electrical circuits, and programming. Before that, I studied Mechatronics at Hanoi University of Science and Technology, gaining early experience in coding and electronics.
+As I continue developing as an engineer, I am focused on expanding my technical knowledge, gaining hands-on experience, and building a strong professional network. I welcome connections, career advice, and opportunities related to electrical engineering and embedded systems
             </p>
-            <div class="flex gap-4">
+            <div class="flex gap-4 justify-center md:justify-start">
                 <a href="#projects" class="px-8 py-3 border-2 border-accent accent-color font-bold hover:bg-accent hover:text-slate-900 transition">View Projects</a>
-                <a href="Portfolio.pdf" class="px-8 py-3 bg-slate-800 font-bold hover:bg-slate-700 transition">Download CV</a>
+                <a href="#resume" class="px-8 py-3 bg-slate-800 font-bold hover:bg-slate-700 transition">View Resume</a>
             </div>
         </div>
         <div class="md:w-1/3">
             <div class="relative w-64 h-64 md:w-80 md:h-80 mx-auto">
                 <div class="absolute inset-0 border-4 border-accent translate-x-4 translate-y-4"></div>
-                <img src="assets/profile-pic.jpg" alt="Jackson Nguyen" class="relative z-10 w-full h-full object-cover">
+                <img src="/assets/profile-pic.jpg" alt="Jackson Nguyen" class="relative z-10 w-full h-full object-cover">
             </div>
         </div>
     </header>
 
     <section id="projects" class="py-20 px-6 bg-slate-900">
-    <div class="max-w-6xl mx-auto">
-        <h2 class="text-4xl font-bold mb-16 flex items-center gap-4">
-            <span class="text-slate-700">01.</span> Featured Projects
-            <div class="h-px flex-grow bg-slate-800"></div>
-        </h2>
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold mb-16 flex items-center gap-4">
+                <span class="text-slate-700 italic">01.</span> Featured Projects
+                <div class="h-px flex-grow bg-slate-800"></div>
+            </h2>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <a href="projects/robot-arm.html" class="group relative block card-bg overflow-hidden hover:border-accent transition-all duration-300 transform hover:-translate-y-2">
-                <div class="h-64 overflow-hidden">
-                    <img src="assets/robot-thumb.jpg" class="w-full h-full object-cover" alt="Robot Arm">
-                </div>
-                <div class="p-8">
-                    <div class="flex justify-between items-start mb-4">
-                        <h3 class="text-2xl font-bold accent-color">6-Axis Robot Arm</h3>
-                        <i class="fa-solid fa-arrow-up-right-from-square text-slate-500 group-hover:accent-color transition"></i>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <a href="projects/robot-arm.html" class="group relative block card-bg overflow-hidden hover:border-accent transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="h-64 overflow-hidden">
+                        <img src="../JacksonAkt.github.io/assets/RobotArm/RA-wiring prototype.jpeg" class="w-full h-full object-cover" alt="Robot Arm">
                     </div>
-                    <p class="text-slate-400 mb-6 text-sm">Validating 24V-15A power networks and implementing NEMA stepper protocols for industrial manipulators.</p>
-                    <div class="flex gap-3 text-[10px] mono text-slate-500 uppercase tracking-tighter">
-                        <span>Arduino Mega</span>
-                        <span>•</span>
-                        <span>Power Electronics</span>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-2xl font-bold accent-color">6-Axis Robot Arm</h3>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-slate-500 group-hover:accent-color transition"></i>
+                        </div>
+                        <p class="text-slate-400 mb-6 text-sm leading-relaxed">Characterizing a 24V-15A power network and implementing control protocols for NEMA steppers.</p>
+                        <div class="flex gap-3 text-[10px] mono text-slate-500 uppercase tracking-tighter">
+                            <span>Arduino Mega</span>
+                            <span>•</span>
+                            <span>Power Electronics</span>
+                        </div>
                     </div>
-                </div>
-            </a>
+                </a>
 
-            <a href="projects/trashcan.html" class="group relative block card-bg overflow-hidden hover:border-accent transition-all duration-300 transform hover:-translate-y-2">
-                <div class="h-64 overflow-hidden">
-                    <img src="assets/trash-thumb.jpg" class="w-full h-full object-cover" alt="IR System">
-                </div>
-                <div class="p-8">
-                    <div class="flex justify-between items-start mb-4">
-                        <h3 class="text-2xl font-bold accent-color">Remote Trashcan</h3>
-                        <i class="fa-solid fa-arrow-up-right-from-square text-slate-500 group-hover:accent-color transition"></i>
+                <a href="projects/trashcan.html" class="group relative block card-bg overflow-hidden hover:border-accent transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="h-64 overflow-hidden">
+                        <img src="../JacksonAkt.github.io/assets/TC-wiring prototype.jpg" class="w-full h-full object-cover" alt="IR System">
                     </div>
-                    <p class="text-slate-400 mb-6 text-sm">Automated lid system using IR protocol decoding and PWM servo control for consumer applications.</p>
-                    <div class="flex gap-3 text-[10px] mono text-slate-500 uppercase tracking-tighter">
-                        <span>C++</span>
-                        <span>•</span>
-                        <span>IR Protocol</span>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-2xl font-bold accent-color">Remote Trashcan</h3>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-slate-500 group-hover:accent-color transition"></i>
+                        </div>
+                        <p class="text-slate-400 mb-6 text-sm leading-relaxed">Automated lid system using IR protocol decoding and PWM servo control for consumer applications.</p>
+                        <div class="flex gap-3 text-[10px] mono text-slate-500 uppercase tracking-tighter">
+                            <span>C++</span>
+                            <span>•</span>
+                            <span>IR Protocol</span>
+                        </div>
                     </div>
-                </div>
-            </a>
+                </a>
 
-            <a href="projects/traffic-light.html" class="group relative block card-bg overflow-hidden hover:border-accent transition-all duration-300 transform hover:-translate-y-2">
-                <div class="h-64 overflow-hidden">
-                    <img src="assets/traffic-thumb.jpg" class="w-full h-full object-cover" alt="Traffic Light">
-                </div>
-                <div class="p-8">
-                    <div class="flex justify-between items-start mb-4">
-                        <h3 class="text-2xl font-bold accent-color">Traffic Simulation</h3>
-                        <i class="fa-solid fa-arrow-up-right-from-square text-slate-500 group-hover:accent-color transition"></i>
+                <a href="projects/traffic-light.html" class="group relative block card-bg overflow-hidden hover:border-accent transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="h-64 overflow-hidden">
+                        <img src="../JacksonAkt.github.io/assets/TL-wiring prototype.PNG" class="w-full h-full object-cover" alt="Traffic Light">
                     </div>
-                    <p class="text-slate-400 mb-6 text-sm">Real-world timing sequences and digital output control using Uno R3 and embedded logic.</p>
-                    <div class="flex gap-3 text-[10px] mono text-slate-500 uppercase tracking-tighter">
-                        <span>Digital Logic</span>
-                        <span>•</span>
-                        <span>Uno R3</span>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-2xl font-bold accent-color">Traffic Simulation</h3>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-slate-500 group-hover:accent-color transition"></i>
+                        </div>
+                        <p class="text-slate-400 mb-6 text-sm leading-relaxed">Digital logic implementation for real-world timing sequences using Arduino Uno R3.</p>
+                        <div class="flex gap-3 text-[10px] mono text-slate-500 uppercase tracking-tighter">
+                            <span>Digital Logic</span>
+                            <span>•</span>
+                            <span>Uno R3</span>
+                        </div>
                     </div>
-                </div>
-            </a>
+                </a>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+
+    <section id="resume" class="py-20 px-6 bg-slate-900/50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold mb-16 flex items-center gap-4">
+                <span class="text-slate-700 italic">02.</span> Professional Resume
+                <div class="h-px flex-grow bg-slate-800"></div>
+                <a href="../JacksonAkt.github.io/assets/Engineering Resume H.pdf" target="_blank" class="text-xs mono accent-color uppercase border border-accent/20 px-4 py-2 hover:bg-accent hover:text-slate-900 transition">PDF Version</a>
+            </h2>
+
+            <div class="grid lg:grid-cols-3 gap-12">
+                <div class="space-y-12">
+                    <div>
+                        <h3 class="mono text-xs uppercase accent-color tracking-[0.2em] mb-6">Education</h3>
+                        <div class="space-y-6">
+                            <div>
+                                <p class="font-bold">University of California Irvine</p>
+                                <p class="text-xs text-slate-500 italic">B.S. Electrical Engineering</p>
+                                <p class="text-xs text-slate-400 mt-1">Specialization: Electronic Circuit Design</p>
+                                <p class="text-[10px] mono accent-color mt-2 italic">GPA: 3.613</p>
+                            </div>
+                            <div>
+                                <p class="font-bold">Santa Ana College</p>
+                                <p class="text-xs text-slate-500 italic">A.S. Engineering (High Honors)</p>
+                                <p class="text-[10px] mono accent-color mt-2 italic">GPA: 3.960</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="mono text-xs uppercase accent-color tracking-[0.2em] mb-6">Technical Skills</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-slate-800 text-[10px] mono text-slate-300 border border-white/5 uppercase">KiCad</span>
+                            <span class="px-3 py-1 bg-slate-800 text-[10px] mono text-slate-300 border border-white/5 uppercase">LTspice</span>
+                            <span class="px-3 py-1 bg-slate-800 text-[10px] mono text-slate-300 border border-white/5 uppercase">Arduino IDE</span>
+                            <span class="px-3 py-1 bg-slate-800 text-[10px] mono text-slate-300 border border-white/5 uppercase">C/C++</span>
+                            <span class="px-3 py-1 bg-slate-800 text-[10px] mono text-slate-300 border border-white/5 uppercase">MATLAB</span>
+                            <span class="px-3 py-1 bg-slate-800 text-[10px] mono text-slate-300 border border-white/5 uppercase">Soldering</span>
+                            <span class="px-3 py-1 bg-slate-800 text-[10px] mono text-slate-300 border border-white/5 uppercase">Circuit Analysis</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-2 space-y-10">
+                    <h3 class="mono text-xs uppercase accent-color tracking-[0.2em]">Engineering Projects</h3>
+                    
+                    <div class="relative pl-8 border-l border-slate-800 space-y-12">
+                        <div class="relative">
+                            <div class="absolute -left-[37px] top-1 w-4 h-4 bg-accent rounded-full border-4 border-slate-900"></div>
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="font-bold text-xl uppercase tracking-tighter">Zotbotics: 3D Robot Arm</h4>
+                                <span class="mono text-[10px] text-slate-500 uppercase">March 2026 - Present</span>
+                            </div>
+                            <p class="text-xs text-slate-400 mb-4 italic uppercase">Electrical Team Member</p>
+                            <ul class="space-y-3 text-sm text-slate-400 leading-relaxed">
+                                <li>• Characterizing and troubleshooting a 24V-15A power distribution network using multimeter diagnostics.</li>
+                                <li>• Designing wiring-system prototypes on breadboards to support firmware testing.</li>
+                                <li>• Implementing control protocols for NEMA stepper motors and IR interfaces using Arduino Mega.</li>
+                            </ul>
+                        </div>
+
+                        <div class="relative">
+                            <div class="absolute -left-[37px] top-1 w-4 h-4 bg-slate-700 rounded-full border-4 border-slate-900"></div>
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="font-bold text-xl uppercase tracking-tighter">Irvine Hacker Fab (Spin Coater)</h4>
+                                <span class="mono text-[10px] text-slate-500 uppercase">January 2026 - Present</span>
+                            </div>
+                            <p class="text-xs text-slate-400 mb-4 italic uppercase">PCB Designer</p>
+                            <ul class="space-y-3 text-sm text-slate-400 leading-relaxed">
+                                <li>• Designing custom 2-layer PCBs in KiCad to consolidate board-to-board interfaces.</li>
+                                <li>• Collaborating to translate physical pin maps into formalized schematics.</li>
+                                <li>• Assembling and soldering components on prototype board.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section id="contact" class="py-20 px-6 max-w-4xl mx-auto text-center">
         <h2 class="text-4xl font-bold mb-4">Ready to Build Something?</h2>
-        <p class="text-slate-400 mb-10">Currently seeking 2026 internships and junior engineering roles in the Irvine/Garden Grove area.</p>
+        <p class="text-slate-400 mb-10">Currently seeking 2026 internships and junior engineering roles in Orange Country and nearby area.</p>
         
         <div class="grid md:grid-cols-2 gap-6 mb-12">
             <a href="mailto:tunglamsandiego@gmail.com" class="card-bg p-6 hover:border-accent transition group">
@@ -134,7 +213,7 @@
 
         <div class="flex justify-center gap-8 text-3xl mb-20">
             <a href="https://github.com/JacksonAkt" target="_blank" class="hover:accent-color"><i class="fa-brands fa-github"></i></a>
-            <a href="#" class="hover:accent-color"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://linkedin.com/in/jackson-nguyen2" target="_blank" class="hover:accent-color"><i class="fa-brands fa-linkedin"></i></a>
         </div>
     </section>
 

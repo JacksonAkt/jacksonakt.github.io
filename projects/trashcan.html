@@ -27,10 +27,31 @@
             <p class="mono text-slate-500 uppercase tracking-widest tracking-[0.2em]">Embedded Prototyping & IR Logic</p>
         </div>
 
-        <section class="mb-16">
-            <p class="mono text-xs text-slate-500 uppercase mb-2">Project Demonstration</p>
-            <div class="w-full aspect-video bg-slate-800 rounded border border-dashed border-slate-600 flex items-center justify-center">
-                <span class="text-slate-500 italic"><i class="fa-solid fa-play mr-2"></i> [Embed Video or Upload MP4 Here]</span>
+<section class="mb-16">
+    <p class="mono text-xs text-slate-500 uppercase mb-2">Project Demonstration</p>
+    <video controls class="w-full rounded border border-slate-700">
+        <source src="../assets/TC-video.mov" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</section>
+
+        <section class="mb-20">
+            <h3 class="text-2xl font-bold mb-6 italic border-b border-slate-700 pb-2">Communication Protocol</h3>
+            <div class="grid md:grid-cols-3 gap-8 items-center">
+                <div class="md:col-span-2">
+                    <p class="text-slate-400 leading-relaxed mb-4">
+                        The system utilizes **Infrared (IR) Communication** to facilitate wireless actuation. By integrating an **Infrared Remote Receiver Module**, the device decodes modulated light signals from a handheld transmitter into digital commands.
+                    </p>
+                    <ul class="space-y-2 text-sm text-slate-300">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-microchip accent-color"></i> Decodes 38kHz modulated IR signals</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-code accent-color"></i> Translates hex codes to PWM servo positions</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-signal accent-color"></i> Line-of-sight wireless range of ~5-10 meters</li>
+                    </ul>
+                </div>
+                <div class="card-bg p-6 rounded text-center">
+                    <i class="fa-solid fa-tower-broadcast text-4xl accent-color mb-4"></i>
+                    <p class="mono text-[10px] uppercase tracking-widest">IR Protocol Decoding</p>
+                </div>
             </div>
         </section>
 
@@ -39,14 +60,45 @@
             <div class="grid md:grid-cols-2 gap-8">
                 <div>
                     <p class="mono text-xs text-slate-500 uppercase mb-2">System Schematic</p>
-                    <div class="w-full h-64 bg-slate-800 rounded border border-dashed border-slate-600 flex items-center justify-center text-center p-4">
-                        <span class="text-slate-500 italic">[Upload Circuit Schematic Here]</span>
-                    </div>
+<div class="w-full h-64 bg-slate-800 rounded overflow-hidden">
+    <img src="../assets/TC-Schematics.png" class="w-full h-full object-contain" alt="Raw Schematic">
+</div>
                 </div>
                 <div>
                     <p class="mono text-xs text-slate-500 uppercase mb-2">Wiring Prototype (Real Life)</p>
-                    <div class="w-full h-64 bg-slate-800 rounded border border-dashed border-slate-600 flex items-center justify-center text-center p-4">
-                        <span class="text-slate-500 italic">[Upload Physical Wiring Photo Here]</span>
+<div class="w-full h-64 bg-slate-800 rounded overflow-hidden">
+    <img src="../assets/TC-wiring prototype.jpg" class="w-full h-full object-contain" alt="Raw Schematic">
+</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-20">
+            <h3 class="text-2xl font-bold mb-8 italic border-b border-slate-700 pb-2">Technical Challenge: Signal Acquisition</h3>
+            <div class="card-bg p-8 border-l-4 border-amber-500">
+                <div class="flex items-start gap-4 mb-6">
+                    <div class="bg-amber-500/20 p-3 rounded">
+                        <i class="fa-solid fa-bug text-amber-500"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg">The Problem: Non-Responsive IR Module</h4>
+                        <p class="text-sm text-slate-400">During initial integration, the IR Receiver Module failed to register any input signals from the handheld remote control.</p>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="bg-slate-900/50 p-4 rounded border border-white/5">
+                        <p class="mono text-[10px] accent-color uppercase mb-2">Debugging Methodology</p>
+                        <p class="text-sm text-slate-300 leading-relaxed">
+                            I utilized the **Arduino Serial Monitor** to print raw data strings upon interrupt triggers. When no hex codes were displayed, I performed a systematic check of the wiring connections and power rails. Despite the firmware and hardware connections being verified as correct, the signal remained flat.
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-900/50 p-4 rounded border border-white/5">
+                        <p class="mono text-[10px] text-green-400 uppercase mb-2">The Resolution</p>
+                        <p class="text-sm text-slate-300 leading-relaxed">
+                            The root cause was identified as a faulty handheld transmitter. Upon swapping to a new remote control, the Serial Monitor immediately began receiving valid signal codes. The code then functioned as intended, successfully driving the servo motor based on the decoded IR commands.
+                        </p>
                     </div>
                 </div>
             </div>
